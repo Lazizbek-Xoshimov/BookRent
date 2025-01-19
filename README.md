@@ -4,3 +4,5 @@ C# console application that manages book rentals and pickups. The goal of the pr
 - Renting books
 - Maintaining and updating rental information
 - Returning books
+## Using the project
+git clone https://github.com/Lazizbek-Xoshimov/BookRent.git
