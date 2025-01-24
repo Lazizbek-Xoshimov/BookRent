@@ -25,7 +25,7 @@ namespace BookRent.Data
             
         }
 
-        public List<User> SelectAllLibrariants() =>
+        public IEnumerable<User> SelectAllLibrariants() =>
              librariants.Values.ToList();
 
         public User InsertLibrariant(User librariant)
@@ -52,8 +52,8 @@ namespace BookRent.Data
             
             exictingLibrariant.Gender = librariant.Gender;
 
-            if(librariant.BirthDate != DateTime.Now)
-                throw new Exception("BirthDate cannot be DateTime.Now");
+            if(librariant.BirthDate < DateTime.Now)
+                throw new TimeoutException("BirthDate cannot be DateTime.Now");
 
             exictingLibrariant.BirthDate = DateTime.Now;
 
