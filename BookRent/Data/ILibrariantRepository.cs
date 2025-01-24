@@ -9,7 +9,7 @@ namespace BookRent.Data
 {
     public interface ILibrariantRepository
     {
-        IEnumerable<User> SelectAllLibrariants();
+        IList<User> SelectAllLibrariants();
         User SelectLibrariantById(int librariantId);
         User InsertLibrariant(User librariant);
         User UpdateLibrariant(int librariantId, User librariant);

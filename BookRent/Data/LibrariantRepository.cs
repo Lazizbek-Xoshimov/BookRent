@@ -25,12 +25,12 @@ namespace BookRent.Data
             
         }
 
-        public IEnumerable<User> SelectAllLibrariants() =>
+        public IList<User> SelectAllLibrariants() =>
              librariants.Values.ToList();
 
         public User InsertLibrariant(User librariant)
         {
-            if (!librariants.ContainsKey(librariant.UserId))
+            if (librariants.ContainsKey(librariant.UserId))
                 throw new ArgumentException("Librariant with this key already exists.");
 
             librariants.Add(librariant.UserId, librariant);
