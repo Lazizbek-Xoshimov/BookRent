@@ -18,7 +18,7 @@ namespace BookRent.Services
             this.librariantRepository = new LibrariantRepository();
         }
 
-        public IEnumerable<User> RetriveLibrariants(string name)
+        public IList<User> RetrieveLibrariants(string name = null)
         {
             var librariants = this.librariantRepository.SelectAllLibrariants();
 

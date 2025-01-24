@@ -9,7 +9,7 @@ namespace BookRent.Services
 {
     public interface ILibrariantService
     {
-        IEnumerable<User> RetriveLibrariants(string name);
+        IList<User> RetrieveLibrariants(string name = null);
         User RetriveLibrariant(int librariantId);
         User AddLibrariant(User librariant);
         User ModifyLibrariant(int librariantId, User librariant);
