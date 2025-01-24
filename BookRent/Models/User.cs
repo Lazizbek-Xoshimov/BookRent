@@ -11,8 +11,8 @@ namespace BookRent.Models
         public int UserId { get; set; }
         public string Name { get; set; }
         public Gender Gender { get; set; }
-        public DateTime BirthDate { get; set; }
-        public UserType UserType { get; set; }
+        public DateTime BirthDate { get; set; } = DateTime.Now;
+        public UserType Type { get; set; }
     }
     public enum Gender
     {
