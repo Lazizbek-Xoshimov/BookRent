@@ -9,6 +9,5 @@ namespace BookRent.Services
     public interface IHomeService
     {
         public void LoadExistingMenus();
-        
     }
 }
