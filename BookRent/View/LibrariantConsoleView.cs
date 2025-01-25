@@ -1,52 +1,28 @@
 ﻿using BookRent.Models;
+using BookRent.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookRent.Services
+namespace BookRent.View
 {
-    public class LibrariantMenuService : ILibrariantMenuService
+    public class LibrariantConsoleView : ILibrariantConsoleView
     {
         private readonly LibrariantService librariantService;
 
-        public LibrariantMenuService()
+        public LibrariantConsoleView()
         {
-            this.librariantService = new LibrariantService();    
+            librariantService = new LibrariantService();
         }
 
-        public void LoadMenu()
-        {
-            Console.Clear();
-            var menus = "1. List of librariants\n2. Add a librariant\n3. Delete librariant\n4. Updating librarian information\n5. Back";
-            Console.WriteLine("==== Librariants ====");
-            Console.WriteLine(menus);
-
-            Console.Write("\n\nMenu tanlang: ");
-            int.TryParse(Console.ReadLine(), out int option);
-
-            switch (option)
-            {
-                case 1:
-                    DisplayLibrariants(); break;
-                case 2:
-                    AddLibrariant(); break;
-
-                case 3:
-                    RemoveLibrariant(); break;
-                case 4:
-                    UpdateLibrariant(); break;
-                case 5:
-                    BackHome(); break;
-            }
-        }
         public void DisplayLibrariants()
         {
-            var librariants = this.librariantService.RetrieveLibrariants();
+            var librariants = librariantService.RetrieveLibrariants();
 
-            for(int index = 0; index < librariants.Count; index++)
-                Console.WriteLine(index + 1 + ". " + 
+            for (int index = 0; index < librariants.Count; index++)
+                Console.WriteLine(index + 1 + ". " +
                     $"{librariants[index].UserId}  {librariants[index].Name}  {librariants[index].Gender}  {librariants[index].BirthDate}  {librariants[index].Type}");
         }
 
@@ -94,10 +70,10 @@ namespace BookRent.Services
             var librariant = librariantService.RetriveLibrariant(id);
 
             Console.WriteLine($"{librariant.UserId}  {librariant.Name}  {librariant.Gender}  {librariant.BirthDate}  {librariant.Type}");
-            this.RemoveLibrariant();
-            this.AddLibrariant();
+            RemoveLibrariant();
+            AddLibrariant();
         }
-        
+
         public void BackHome()
         {
             throw new NotImplementedException();

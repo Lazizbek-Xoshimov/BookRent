@@ -1,45 +1,17 @@
 ﻿using BookRent.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BookRent.Services;
 
-namespace BookRent.Services
+namespace BookRent.View
 {
-    public class BookMenuService : IBookMenuService
+    public class BookConsoleView : IBookConsoleView
     {
         private readonly IBookService bookService;
 
-        public BookMenuService()
+        public BookConsoleView()
         {
             this.bookService = new BookService();
         }
 
-        public void LoadMenu()
-        {
-            Console.Clear();
-            var menus = "1. List of books\n2. Add a book\n3. Delete book\n4. Updating book information\n5. Back";
-            Console.WriteLine("==== Books ====");
-            Console.WriteLine(menus);
-
-            Console.Write("\n\nSelect menu: ");
-            int.TryParse(Console.ReadLine(), out int option);
-
-            switch (option)
-            {
-                case 1:
-                    DisplayBook(); break;
-                case 2:
-                    AddBook(); break;
-                case 3: 
-                    RemoveBook(); break;
-                case 4:
-                    UpdateBook(); break;
-                case 5:
-                    Back(); break;
-            }
-        }
         public void DisplayBook()
         {
             var books = this.bookService.RetriveBooks();
@@ -91,10 +63,6 @@ namespace BookRent.Services
             int.TryParse(Console.ReadLine(), out int id);
 
             bookService.RemoveBook(id);
-        }
-        public void Back()
-        {
-            throw new NotImplementedException();
         }
     }
 }

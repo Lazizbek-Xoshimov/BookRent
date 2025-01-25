@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookRent.Services
+namespace BookRent.View
 {
-    public interface IBookMenuService
+    public interface IBookConsoleView
     {
-        void LoadMenu();
         void DisplayBook();
         void AddBook();
         void RemoveBook();
+
         void UpdateBook();
     }
 }

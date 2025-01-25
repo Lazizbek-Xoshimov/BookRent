@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BookRent.Services
+namespace BookRent.View
 {
-    public interface ILibrariantMenuService
+    public interface ILibrariantConsoleView
     {
-        void LoadMenu();
         void DisplayLibrariants();
         void AddLibrariant();
         void RemoveLibrariant();
