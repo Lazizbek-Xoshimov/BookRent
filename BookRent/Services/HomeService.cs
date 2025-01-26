@@ -1,4 +1,6 @@
-﻿using BookRent.View;
+﻿using BookRent.Services.Interfaces;
+using BookRent.View;
+using BookRent.View.Interfaces;
 
 namespace BookRent.Services
 {

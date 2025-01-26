@@ -1,5 +1,6 @@
 ﻿using BookRent.Models;
 using BookRent.Services;
+using BookRent.View.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
